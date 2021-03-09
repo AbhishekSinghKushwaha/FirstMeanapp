@@ -4,6 +4,8 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 var { signup } = require('../models/signup');
 
+
+
 router.get('/', (req,res)=>{
     signup.find((err,docs) => {
         if (!err) {res.send(docs);}
@@ -61,4 +63,5 @@ router.delete('/:id', (req,res)=>{
         else {console.log('Error in signup delete:'+JSON.stringify(err, undefined, 2));}
     });
 });
+
 module.exports = router;
